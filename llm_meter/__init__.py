@@ -17,18 +17,29 @@ Usage:
         raise Exception(f"Rate limit hit. Retry in {info['retry_after']}s")
 """
 
-from .tracker import CostTracker, TokenUsage, CostAlert, LimitExceeded
+from .tracker import (
+    CostTracker,
+    TokenUsage,
+    CostAlert,
+    LimitExceeded,
+    UnpricedEvent,
+    DriftReport,
+)
 from .limiter import RateLimiter
-from .pricing import PRICING, add_model_pricing
+from .pricing import PRICING, add_model_pricing, compute_cost, CostBreakdown
 
 __all__ = [
     "CostTracker",
     "TokenUsage",
     "CostAlert",
     "LimitExceeded",
+    "UnpricedEvent",
+    "DriftReport",
     "RateLimiter",
     "PRICING",
     "add_model_pricing",
+    "compute_cost",
+    "CostBreakdown",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
